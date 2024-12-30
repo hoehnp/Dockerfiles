@@ -2,7 +2,7 @@
 set -euo pipefail
 
 SDK_VERSION="latest"
-TARGET_VERSION="4.6.0.13"
+TARGET_VERSION="5.0.0.29"
 SDK_NAME="Jolla-$SDK_VERSION-SailfishOS_Platform_SDK_Chroot-i486.tar.bz2"
 SDK_URL="http://releases.sailfishos.org/sdk/installers/$SDK_VERSION/$SDK_NAME"
 
@@ -39,7 +39,7 @@ chgrp -h 1000 ./home/appsupport-root/ ./home/appsupport-root/.bash_logout ./home
 
 tar --append --file=Sailfish_OS-$TARGET_VERSION-Sailfish_SDK_Tooling-i486.tar ./home/appsupport-root ./var/spool/mail/appsupport-root ./etc/group ./etc/passwd
 bzip2 Sailfish_OS-$TARGET_VERSION-Sailfish_SDK_Tooling-i486.tar
-md5sum Sailfish_OS-$TARGET_VERSION-Sailfish_SDK_Tooling-i486.tar.bz2 Sailfish_OS-$TARGET_VERSION-Sailfish_SDK_Tooling-i486.tar.bz2.md5sum
+md5sum Sailfish_OS-$TARGET_VERSION-Sailfish_SDK_Tooling-i486.tar.bz2 > Sailfish_OS-$TARGET_VERSION-Sailfish_SDK_Tooling-i486.tar.bz2.md5sum
 rm -rf ./home ./var ./etc
 
 echo "Building image"
